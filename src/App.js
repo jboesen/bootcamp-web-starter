@@ -4,8 +4,9 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 import client from './client'
-import Home from './containers/Home'
 import Welcome from './containers/Welcome'
+import Login from './containers/Login'
+import Home from './containers/Home'
 
 const App = () => (
   <Router>
@@ -13,6 +14,8 @@ const App = () => (
       <ApolloProvider client={client}>
         <div className="App">
           <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/home" component={Home} />
             <Route path="/" component={Welcome} />
           </Switch>
         </div>
